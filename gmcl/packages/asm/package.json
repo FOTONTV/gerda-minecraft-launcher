@@ -1,0 +1,35 @@
+{
+  "name": "@gmcl/asm",
+  "version": "0.1.4",
+  "main": "./index.ts",
+  "description": "Java ASM module transferred into the typescript",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerdaMC/minecraft-launcher-core-node.git"
+  },
+  "author": "cijhn@hotmail.com",
+  "keywords": [
+    "minecraft",
+    "typescript",
+    "minecraft-launcher",
+    "nodejs",
+    "electron"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GerdaMC/minecraft-launcher-core-node/issues"
+  },
+  "homepage": "https://github.com/GerdaMC/minecraft-launcher-core-node#readme",
+  "dependencies": {
+    "long": "~3",
+    "@types/long": "^4.0.2"
+  }
+}

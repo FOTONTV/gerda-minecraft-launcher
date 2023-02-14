@@ -1,0 +1,31 @@
+{
+  "name": "@gmcl/gamesetting",
+  "version": "2.0.2",
+  "main": "./index.ts",
+  "description": "Minecraft gamesetting (options.txt) parsing.",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerdaMC/minecraft-launcher-core-node.git"
+  },
+  "author": "cijhn@hotmail.com",
+  "keywords": [
+    "minecraft",
+    "typescript",
+    "minecraft-launcher",
+    "nodejs",
+    "electron"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GerdaMC/minecraft-launcher-core-node/issues"
+  },
+  "homepage": "https://github.com/GerdaMC/minecraft-launcher-core-node#readme"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@gmcl/text-component",
+  "version": "2.1.1",
+  "main": "./index.ts",
+  "description": "Minecraft text component parsing and rendering.",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerdaMC/minecraft-launcher-core-node.git"
+  },
+  "author": "cijhn@hotmail.com",
+  "sideEffects": false,
+  "keywords": [
+    "minecraft",
+    "typescript",
+    "minecraft-launcher",
+    "nodejs",
+    "electron"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GerdaMC/minecraft-launcher-core-node/issues"
+  },
+  "homepage": "https://github.com/GerdaMC/minecraft-launcher-core-node#readme"
+}

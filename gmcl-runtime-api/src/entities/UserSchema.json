@@ -1,0 +1,289 @@
+{
+    "type": "object",
+    "properties": {
+        "users": {
+            "description": "All saved user account through multiple services",
+            "default": {},
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/UserProfile"
+            }
+        },
+        "selectedUser": {
+            "description": "Contains the UUID-hashed account and the UUID of the currently selected user",
+            "default": {
+                "account": "",
+                "profile": ""
+            },
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "The UUID-hashed key of the currently selected user",
+                    "default": "",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "clientToken": {
+            "description": "The client token of current client. The launcher will generate one at first launch.",
+            "default": "",
+            "type": "string"
+        },
+        "yggdrasilServices": {
+            "description": "The customized third-party yggrasil services satisfying the authlib-injector api format",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/YggdrasilApi"
+            }
+        }
+    },
+    "required": [
+        "clientToken",
+        "selectedUser",
+        "users",
+        "yggdrasilServices"
+    ],
+    "definitions": {
+        "UserProfile": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "User id. Also means the localId in new account_json",
+                    "type": "string"
+                },
+                "username": {
+                    "description": "The username usually email",
+                    "type": "string"
+                },
+                "authService": {
+                    "description": "The used auth service name",
+                    "type": "string"
+                },
+                "accessToken": {
+                    "description": "The access token of the user. The token is invalid either in\n\n- This access token value is set to empty string\n- The `expiredAt` is larger than `Date.now()`",
+                    "type": "string"
+                },
+                "expiredAt": {
+                    "description": "The expire time",
+                    "type": "number"
+                },
+                "profiles": {
+                    "description": "All available game profiles",
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/GameProfileAndTexture"
+                    }
+                },
+                "selectedProfile": {
+                    "description": "Selected profile uuid",
+                    "type": "string"
+                },
+                "avatar": {
+                    "description": "The avatar uri. This can be base64 data uri.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "accessToken",
+                "authService",
+                "expiredAt",
+                "id",
+                "profiles",
+                "selectedProfile",
+                "username"
+            ]
+        },
+        "GameProfileAndTexture": {
+            "type": "object",
+            "properties": {
+                "textures": {
+                    "type": "object",
+                    "properties": {
+                        "SKIN": {
+                            "$ref": "#/definitions/GameProfile.Texture"
+                        },
+                        "CAPE": {
+                            "description": "The data structure that hold the texture",
+                            "$ref": "#/definitions/GameProfile.Texture"
+                        },
+                        "ELYTRA": {
+                            "description": "The data structure that hold the texture",
+                            "$ref": "#/definitions/GameProfile.Texture"
+                        }
+                    },
+                    "required": [
+                        "SKIN"
+                    ]
+                },
+                "uploadable": {
+                    "type": "array",
+                    "items": {
+                        "enum": [
+                            "cape",
+                            "skin"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "skins": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "enum": [
+                                    "ACTIVE",
+                                    "INACTIVE"
+                                ],
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "variant": {
+                                "enum": [
+                                    "CLASSIC",
+                                    "SLIM"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "state",
+                            "url",
+                            "variant"
+                        ]
+                    }
+                },
+                "capes": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "enum": [
+                                    "ACTIVE",
+                                    "INACTIVE"
+                                ],
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "alias": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "alias",
+                            "id",
+                            "state",
+                            "url"
+                        ]
+                    }
+                },
+                "id": {
+                    "description": "game profile unique id",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "This is in game displayed name",
+                    "type": "string"
+                },
+                "properties": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "number"
+                },
+                "legacyProfile": {
+                    "type": "boolean"
+                },
+                "suspended": {
+                    "type": "boolean"
+                },
+                "paid": {
+                    "type": "boolean"
+                },
+                "migrated": {
+                    "type": "boolean"
+                },
+                "legacy": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "textures"
+            ]
+        },
+        "GameProfile.Texture": {
+            "description": "The data structure that hold the texture",
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "metadata": {
+                    "type": "object",
+                    "additionalProperties": {},
+                    "properties": {
+                        "model": {
+                            "enum": [
+                                "slim",
+                                "steve"
+                            ],
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "url"
+            ]
+        },
+        "YggdrasilApi": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "description": "The base service url",
+                    "type": "string"
+                },
+                "profile": {
+                    "description": "It will use `url + '/sessionserver/session/minecraft/profile/${uuid}'` by default",
+                    "type": "string"
+                },
+                "texture": {
+                    "description": "It will use `url + \"/api/user/profile/${uuid}/${type}\"` by default",
+                    "type": "string"
+                },
+                "auth": {
+                    "description": "It will use `url + \"/authserver\"` by default",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "url"
+            ]
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false
+}

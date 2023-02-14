@@ -1,0 +1,34 @@
+{
+  "name": "@gmcl/server-info",
+  "version": "2.0.4",
+  "main": "./index.ts",
+  "description": "Read Minecraft servers.dat NBT file",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js",
+    "access": "public"
+  },
+  "dependencies": {
+    "@gmcl/nbt": "^2.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerdaMC/minecraft-launcher-core-node.git"
+  },
+  "author": "cijhn@hotmail.com",
+  "keywords": [
+    "minecraft",
+    "typescript",
+    "minecraft-launcher",
+    "nodejs",
+    "electron"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GerdaMC/minecraft-launcher-core-node/issues"
+  },
+  "homepage": "https://github.com/GerdaMC/minecraft-launcher-core-node#readme"
+}

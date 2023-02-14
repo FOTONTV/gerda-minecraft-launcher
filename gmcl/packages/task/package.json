@@ -1,0 +1,19 @@
+{
+  "name": "@gmcl/task",
+  "main": "./index.ts",
+  "author": {
+    "name": "cijhn@hotmail.com"
+  },
+  "description": "A tree structure task definition",
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js",
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerdaMC/minecraft-launcher-core-node.git"
+  },
+  "version": "4.0.3"
+}

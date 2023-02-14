@@ -1,0 +1,43 @@
+{
+  "name": "@gmcl/nbt",
+  "version": "2.0.3",
+  "main": "./index.ts",
+  "browser": "./dist/index.browser.js",
+  "description": "NBT serialization and deserialization",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerdaMC/minecraft-launcher-core-node.git"
+  },
+  "author": "cijhn@hotmail.com",
+  "keywords": [
+    "minecraft",
+    "typescript",
+    "minecraft-launcher",
+    "nodejs",
+    "electron"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bytebuffer": "^5.0.1",
+    "file-type": "^12.4.2",
+    "@types/long": "^4.0.2",
+    "long": "~3"
+  },
+  "bugs": {
+    "url": "https://github.com/GerdaMC/minecraft-launcher-core-node/issues"
+  },
+  "homepage": "https://github.com/GerdaMC/minecraft-launcher-core-node#readme",
+  "devDependencies": {
+    "@types/bytebuffer": "^5.0.42",
+    "@types/pako": "^1.0.1",
+    "pako": "^1.0.10"
+  }
+}

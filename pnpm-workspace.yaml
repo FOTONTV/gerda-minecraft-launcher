@@ -1,0 +1,9 @@
+packages:
+  - 'gmcl/packages/**'
+  - 'gmcl-electron-app'
+  - 'gmcl-runtime-api'
+  - 'gmcl-runtime'
+  - 'gmcl-keystone-ui'
+  - 'gmcl-client-vue'
+  - '.github/actions/*'
+  - 'packages/**'

@@ -1,0 +1,77 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Electron: Main (launch)",
+            "type": "node",
+            "request": "launch",
+            "preLaunchTask": "dev",
+            "program": "${workspaceFolder}/gmcl-electron-app/dist/index.js",
+            "args": [
+                "--remote-debugging-port=9300",
+                "--trace-uncaught",
+                "--trace-deprecation"
+            ],
+            "sourceMaps": true,
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/gmcl-electron-app/dist/**",
+                "!**/node_modules/**"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/gmcl-electron-app/dist/*.js"
+            ],
+            "runtimeExecutable": "${workspaceFolder}/gmcl-electron-app/node_modules/.bin/electron",
+            "skipFiles": [
+                "<node_internals>/**",
+                "${workspaceFolder}/gmcl-runtime/lib/managers/index.ts",
+                "${workspaceFolder}/gmcl-runtime/lib/managers/LogManager.ts"
+            ],
+            "cwd": "${workspaceFolder}/gmcl-electron-app/dist",
+            "env": {
+                "NODE_ENV": "development",
+            },
+            "windows": {
+                "env": {
+                    "Path": "${env:Path}${workspaceFolder}\\gmcl-electron-app\\build\\extra"
+                }
+            }
+        },
+        {
+            "name": "Electron: Renderer (attach)",
+            // "type": "chrome",
+            "type": "chrome",
+            "request": "attach",
+            "restart": true,
+            "port": 9300,
+            "webRoot": "${workspaceFolder}",
+            "timeout": 15000
+        },
+        {
+            "name": "Electron: Main (attach)",
+            "type": "node",
+            "request": "attach",
+            "cwd": "${workspaceFolder}",
+            "outFiles": [
+                "${workspaceFolder}/dist/*.js"
+            ],
+            "smartStep": true,
+            "sourceMaps": true,
+            "protocol": "inspector",
+            "port": 5858,
+            "timeout": 20000
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Electron: All",
+            "preLaunchTask": "dev",
+            "configurations": [
+                "Electron: Main (launch)",
+                "Electron: Renderer (attach)"
+            ]
+        }
+    ]
+}

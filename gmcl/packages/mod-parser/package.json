@@ -1,0 +1,37 @@
+{
+  "name": "@gmcl/mod-parser",
+  "version": "3.3.0",
+  "main": "./index.ts",
+  "description": "Minecraft Mod parser. Provides the utilities to parse forge/liteloader/fabric mod metadata.",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "module": "./dist/index.esm.js"
+  },
+  "dependencies": {
+    "toml": "^3.0.0",
+    "@gmcl/system": "^2.2.3",
+    "@gmcl/asm": "^0.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerdaMC/minecraft-launcher-core-node.git"
+  },
+  "author": "cijhn@hotmail.com",
+  "sideEffects": false,
+  "keywords": [
+    "minecraft",
+    "typescript",
+    "minecraft-launcher",
+    "nodejs",
+    "electron"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GerdaMC/minecraft-launcher-core-node/issues"
+  },
+  "homepage": "https://github.com/GerdaMC/minecraft-launcher-core-node#readme"
+}

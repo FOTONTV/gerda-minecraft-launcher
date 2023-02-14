@@ -1,0 +1,21 @@
+{
+    "version": "0.34.0",
+    "private": true,
+    "license": "MIT",
+    "packageManager": "pnpm@7.15.0",
+    "scripts": {
+        "build": "pnpm run --prefix=gmcl-electron-app build",
+        "build:all": "pnpm run --prefix=gmcl-electron-app build:all",
+        "build:dir": "pnpm run --prefix=gmcl-electron-app build:dir",
+        "build:main": "pnpm run --prefix=gmcl-electron-app build",
+        "build:renderer": "pnpm run --prefix=gmcl-keystone-ui build",
+        "check": "pnpm run --prefix=gmcl-runtime-api check && pnpm run --prefix=gmcl-runtime check && pnpm run --prefix=gmcl-electron-app check && pnpm run --prefix=gmcl-keystone-ui check",
+        "dev:main": "pnpm run --prefix=gmcl-electron-app dev",
+        "dev:renderer": "pnpm run --prefix=gmcl-keystone-ui dev",
+        "lint": "pnpm run --prefix=gmcl-keystone-ui lint && pnpm run --prefix=gmcl-runtime lint && pnpm run --prefix=gmcl-runtime-api lint && pnpm run --prefix=gmcl-electron-app lint",
+        "lint:fix": "pnpm run --prefix=gmcl-runtime-api lint:fix && pnpm run --prefix=gmcl-runtime lint:fix && pnpm run --prefix=gmcl-electron-app lint:fix && pnpm run --prefix=gmcl-keystone-ui lint:fix"
+    },
+    "dependencies": {
+        "dotenv": "16.0.1"
+    }
+}
