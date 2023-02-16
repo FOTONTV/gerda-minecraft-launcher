@@ -64,7 +64,7 @@ export class OfficialUserService extends AbstractService implements IOfficialUse
         async (directRedirectToLauncher) => {
           if (IS_DEV) directRedirectToLauncher = true
           const port = await app.localhostServerPort ?? 25555
-          return (directRedirectToLauncher ? `http://localhost:${port}/auth` : `https://gmcl.app/auth?port=${port}`)
+          return `http://localhost:${port}/auth`
         },
         (response) => {
           this.emit('device-code', response)
