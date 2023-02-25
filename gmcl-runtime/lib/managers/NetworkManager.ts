@@ -108,7 +108,7 @@ export default class NetworkManager extends Manager {
     })
 
     const version = IS_DEV ? '0.0.0' : app.version
-    const userAgent = `GerdaMC/gerda_minecraft_launcher/${version} (gmcl.app)`
+    const userAgent = `GerdaMC/gerda_minecraft_launcher/${version} (fmcl.fun)`
     this.userAgent = userAgent
 
     const downloadDispatcher =

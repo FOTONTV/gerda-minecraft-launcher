@@ -15,7 +15,7 @@ export class DownloadAppInstallerTask extends BaseTask<void> {
   protected async runTask(): Promise<void> {
     const destination = join(app.getPath('downloads'), 'Gerda Minecraft Launcher.appinstaller')
     await download({
-      url: 'https://gmcl.blob.core.windows.net/releases/gmcl.appinstaller',
+      url: 'https://fmcl.fun/releases/gmcl.appinstaller',
       destination: destination,
     })
     shell.showItemInFolder(destination)

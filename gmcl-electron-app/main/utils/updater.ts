@@ -106,13 +106,13 @@ export class ElectronUpdater implements LauncherAppUpdater {
     const app = this.app
     app.log('Try get update from selfhost')
     const { allowPrerelease, locale } = app.serviceManager.get(BaseService).state
-    const url = `https://api.gmcl.app/latest?version=v${app.version}&prerelease=${allowPrerelease || false}`
+    const url = `https://api.fmcl.fun/latest?version=v${app.version}&prerelease=${allowPrerelease || false}`
     const response = await request(url, {
       headers: {
         'Accept-Language': locale,
       },
       throwOnError: true,
-    }).catch(() => request('https://gmcl.blob.core.windows.net/releases/latest_version.json'))
+    }).catch(() => request('https://fmcl.fun/releases/latest_version.json'))
     const result = await response.body.json()
     const updateInfo: ReleaseInfo = {
       name: result.tag_name,

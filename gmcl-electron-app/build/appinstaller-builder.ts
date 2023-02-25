@@ -5,13 +5,13 @@ function getAppInstallerContent(version: string, publisher: string) {
   <AppInstaller
       xmlns="http://schemas.microsoft.com/appx/appinstaller/2018"
       Version="${version}.0"
-      Uri="https://gmcl.blob.core.windows.net/releases/gmcl.appinstaller" >
+      Uri="https://fmcl.fun/releases/gmcl.appinstaller" >
       <MainPackage
           Name="GMCL"
           Publisher="${publisher}"
           Version="${version}.0"
           ProcessorArchitecture="x64"
-          Uri="https://gmcl-release-ms.azureedge.net/releases/gmcl-${version}.appx" />
+          Uri="https://fmcl.fun/releases/gmcl-${version}.appx" />
       <UpdateSettings>
           <OnLaunch HoursBetweenUpdateChecks="0"/>
       </UpdateSettings>

@@ -65,7 +65,7 @@ export class PeerGroup extends EventEmitter {
   constructor(readonly groupId: string, readonly id: string, headers?: Record<string, string>) {
     super()
     this.idBinary = Buffer.from(id.replace(/-/g, '').match(/.{2}/g)!.map((v) => parseInt(v, 16)))
-    this.socket = new WebSocket(`wss://api.gmcl.app/group/${groupId}`, {
+    this.socket = new WebSocket(`wss://api.fmcl.fun/group/${groupId}`, {
       headers: {
         ...(headers || {}),
         id,
@@ -143,7 +143,7 @@ export class PeerGroup extends EventEmitter {
       controller.abort()
       if (!this.closed) {
         // Try to reconnect as this is closed unexpected
-        this.socket = new WebSocket(`wss://api.gmcl.app/group/${groupId}`, {})
+        this.socket = new WebSocket(`wss://api.fmcl.fun/group/${groupId}`, {})
         this.state = 'connecting'
         this.#initiate()
         this.emit('state', this.state)

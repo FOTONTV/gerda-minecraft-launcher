@@ -37,17 +37,6 @@
           </v-icon>
           {{ t('setting.officialWebsite') }}
         </v-btn>
-        <v-btn
-          text
-          @click="openGithub()"
-        >
-          <v-icon
-            left
-          >
-            signpost
-          </v-icon>
-          {{ t('setting.githubRelease') }}
-        </v-btn>
         <v-spacer />
         <v-btn
           v-if="updateStatus === 'pending'"
@@ -126,10 +115,7 @@ const body = computed(() => state.updateInfo?.useAutoUpdater ? state.updateInfo.
 const isAppX = computed(() => state.env === 'appx')
 
 const openOfficialWebsite = () => {
-  openInBrowser('https://gmcl.app')
-}
-const openGithub = () => {
-  openInBrowser('https://github.com/GerdaMC/gerda-minecraft-launcher/releases')
+  openInBrowser('https://fmcl.fun')
 }
 </script>
 

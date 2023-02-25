@@ -52,7 +52,7 @@ const { data } = injection(InstanceEditInjectionKey)
 const { gameProfile } = useCurrentUser()
 const { t } = useI18n()
 const gotoHelp = () => {
-  window.location = 'https://gmcl.app/faq/' as any
+  window.location = 'https://fmcl.fun/faq/' as any
 }
 
 </script>

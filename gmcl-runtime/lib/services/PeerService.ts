@@ -201,7 +201,7 @@ export class PeerService extends StatefulService<PeerState> implements IPeerServ
     const officialAccount = await this.userService.getOfficialUserProfile()
     if (officialAccount) {
       this.log(`Use minecraft xbox ${officialAccount.username} to fetch rtc credential`)
-      const response = await request('https://api.gmcl.app/rtc/official', {
+      const response = await request('https://api.fmcl.fun/rtc/official', {
         method: 'POST',
         headers: {
           authorization: `Bearer ${officialAccount.accessToken}`,

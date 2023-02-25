@@ -7,9 +7,9 @@ export function createAnswerLauncherUrl(description: string) {
 }
 
 export function createOfferAppUrl(description: string, inviter: string) {
-  return `https://gmcl.app/peer?description=${description}?type=offer?inviter=${inviter}`
+  return `https://fmcl.fun/peer?description=${description}?type=offer?inviter=${inviter}`
 }
 
 export function createAnswerAppUrl(description: string, inviter: string) {
-  return `https://gmcl.app/peer?description=${description}?type=answer?inviter=${inviter}`
+  return `https://fmcl.fun/peer?description=${description}?type=answer?inviter=${inviter}`
 }
